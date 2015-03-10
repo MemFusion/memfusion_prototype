@@ -1,4 +1,4 @@
-![](https://github.com/MemFusion/memfusion_prototype/MF_logo_Memfusion.png)
+![](https://github.com/MemFusion/memfusion_prototype/docs/MF_logo_Memfusion.png)
 
 #MemFusion
 ##An in-memory aggregation engine in the MongoDB ecosystem
@@ -22,7 +22,7 @@ The work is still not done yet, but I have a prototype I would like to share and
 
 ##Limitations
 - Runs only on Windows for now. Porting to Linux is my #1 priority.<br>
-- Although the BackEnd is fully multithreaded... The FrontEnd is single serializes requests. For now.<br>
+- Although the BackEnd is fully multithreaded. The FrontEnd, for now, is single threaded: it serializes each request.<br>
 - There is no decent logging.<br>
 - No configuration. You are stuck with port 27017 for example. And with default Collection parameters. (Program.fs)<br>
 - The query parser is not complete. Not all MongoDB operators are not supported yet.<br>
@@ -53,8 +53,8 @@ Strings and binary data (which are variable length fields) that do not fit in 8 
 ##Collections and "Bins"
 Each collection is divided into a number of "bins".
 A bin is a big blob of contiguous memory (right now fixed at 100MB) where data is stored into.
-Inserts are appends. The FE asks a given collection for some data amount and the collection
-returns a memory region where the FE will actually serialize the BSON document into Z2 atoms.
+Inserts are appends. The FrontEnd asks a given collection for some data amount and the collection
+returns a memory region where the FrontEnd will actually serialize the BSON document into Z2 atoms.
 If the latest bin is full or doesn't have enough room for the incoming data, a new Bin is created and future intake goes to that bin until
 it is full.
 Deletions are on the to-do list.
@@ -72,12 +72,17 @@ Another thread, the "Composer", as soon as each bin has been processed by both L
 
 Both LFTs reading sequentially the memory at more or less the same time reduces L3 pollution.
 And modern processor should be able to pick up a streaming pattern easily and cache in advance nicely.<br>
-Searches like the above one run at a nice 50% of the memory bandwidth.<br>
-Meaning it goes at 5GB/s on my 10GB/s memory bandwidth.<br>
-An aggregation like "sum population grouped by city" runs at about 20% of memory bandwith.<br>
 Furthermore... reading and writing data from and to the bins is lock-free.
 LFTs read from the bins and write into stage1 buffers, which are lock-free as well.
 So the bottleneck becomes esentially the memory bandwith for stage1.
+
+##Benchmarks
+Although preliminary, an aggregation like the one below runs at about 20% of memory bandwidth (2GB/s on my pc).<br>
+    db.zips.aggregate({ $group: {_id:"$state", totalPop: {$sum: "$pop"} } } )
+
+Simple searches with one or two filtes run at 50% of memory bandwidth (5GB/s on my pc):
+    db.test.find(  { price: { $gt: 1.99 } } )
+    db.test.find(  { $and: [ { price: { $gt: 1.99 } }, { cost: { $lt: 1.00 } } ] } )
 
 
 ## Features in to-do list
