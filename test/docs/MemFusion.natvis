@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+
+<Type Name="MFDB::Z2">
+  <DisplayString>doc={z2raw.m128i_u32[0]} name={z2raw.m128i_u32[1] &amp; 0xFFFFFF}, type={(BSONtypeCompressed)(z2raw.m128i_u8[7] &amp; 0x1F)}, value={z2raw.m128i_u64[1]}</DisplayString>
+  <!--<DisplayString>doc={z2raw.m128i_u32[0]} name={z2raw.m128i_u32[1] &amp; 0xFFFFFF} type={(z2raw.m128i_u8[7] &amp; 0x1F)}</DisplayString>-->
+</Type>
+
+</AutoVisualizer>

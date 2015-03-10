@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Server", "Server\Server.fsproj", "{833EBEE7-E076-43B2-AA90-CF06874897ED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E5C7E25-939E-45F3-9DE4-8597C596915E} = {1E5C7E25-939E-45F3-9DE4-8597C596915E}
+		{81E07D60-53E1-4B9F-B48B-AE26B7B1A75F} = {81E07D60-53E1-4B9F-B48B-AE26B7B1A75F}
+		{A75A6F8C-6FE0-4B93-A792-0E7F47C37D95} = {A75A6F8C-6FE0-4B93-A792-0E7F47C37D95}
+		{406688CE-4174-4AFC-8EE3-C7C8DC3A89B1} = {406688CE-4174-4AFC-8EE3-C7C8DC3A89B1}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BSON", "BSON\BSON.fsproj", "{81E07D60-53E1-4B9F-B48B-AE26B7B1A75F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E5C7E25-939E-45F3-9DE4-8597C596915E} = {1E5C7E25-939E-45F3-9DE4-8597C596915E}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MFDB", "MFDB\MFDB.fsproj", "{406688CE-4174-4AFC-8EE3-C7C8DC3A89B1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81E07D60-53E1-4B9F-B48B-AE26B7B1A75F} = {81E07D60-53E1-4B9F-B48B-AE26B7B1A75F}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MongoWP", "MongoWP\MongoWP.fsproj", "{BFFAA40A-6C18-4A5F-B941-C70583D520ED}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MFUtil", "MFUtil\MFUtil.fsproj", "{1E5C7E25-939E-45F3-9DE4-8597C596915E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFDBCore", "MFDBCore\MFDBCore.vcxproj", "{A75A6F8C-6FE0-4B93-A792-0E7F47C37D95}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFDBCoreTest", "test\MFDBCoreTest\MFDBCoreTest.vcxproj", "{060E615B-8E48-4CA3-A290-C6670012026E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6B060F7-EEB8-4326-BBC5-96DCE60AD7FC}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Z2_tests", "test\Z2_tests\Z2_tests.fsproj", "{B21647D1-7331-44F6-B391-C576365C2843}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{833EBEE7-E076-43B2-AA90-CF06874897ED}.Debug|x64.ActiveCfg = Debug|x64
+		{833EBEE7-E076-43B2-AA90-CF06874897ED}.Debug|x64.Build.0 = Debug|x64
+		{833EBEE7-E076-43B2-AA90-CF06874897ED}.Release|x64.ActiveCfg = Release|x64
+		{833EBEE7-E076-43B2-AA90-CF06874897ED}.Release|x64.Build.0 = Release|x64
+		{81E07D60-53E1-4B9F-B48B-AE26B7B1A75F}.Debug|x64.ActiveCfg = Debug|x64
+		{81E07D60-53E1-4B9F-B48B-AE26B7B1A75F}.Debug|x64.Build.0 = Debug|x64
+		{81E07D60-53E1-4B9F-B48B-AE26B7B1A75F}.Release|x64.ActiveCfg = Release|x64
+		{81E07D60-53E1-4B9F-B48B-AE26B7B1A75F}.Release|x64.Build.0 = Release|x64
+		{406688CE-4174-4AFC-8EE3-C7C8DC3A89B1}.Debug|x64.ActiveCfg = Debug|x64
+		{406688CE-4174-4AFC-8EE3-C7C8DC3A89B1}.Debug|x64.Build.0 = Debug|x64
+		{406688CE-4174-4AFC-8EE3-C7C8DC3A89B1}.Release|x64.ActiveCfg = Release|x64
+		{406688CE-4174-4AFC-8EE3-C7C8DC3A89B1}.Release|x64.Build.0 = Release|x64
+		{BFFAA40A-6C18-4A5F-B941-C70583D520ED}.Debug|x64.ActiveCfg = Debug|x64
+		{BFFAA40A-6C18-4A5F-B941-C70583D520ED}.Debug|x64.Build.0 = Debug|x64
+		{BFFAA40A-6C18-4A5F-B941-C70583D520ED}.Release|x64.ActiveCfg = Release|x64
+		{BFFAA40A-6C18-4A5F-B941-C70583D520ED}.Release|x64.Build.0 = Release|x64
+		{1E5C7E25-939E-45F3-9DE4-8597C596915E}.Debug|x64.ActiveCfg = Debug|x64
+		{1E5C7E25-939E-45F3-9DE4-8597C596915E}.Debug|x64.Build.0 = Debug|x64
+		{1E5C7E25-939E-45F3-9DE4-8597C596915E}.Release|x64.ActiveCfg = Release|x64
+		{1E5C7E25-939E-45F3-9DE4-8597C596915E}.Release|x64.Build.0 = Release|x64
+		{A75A6F8C-6FE0-4B93-A792-0E7F47C37D95}.Debug|x64.ActiveCfg = Debug|x64
+		{A75A6F8C-6FE0-4B93-A792-0E7F47C37D95}.Debug|x64.Build.0 = Debug|x64
+		{A75A6F8C-6FE0-4B93-A792-0E7F47C37D95}.Release|x64.ActiveCfg = Release|x64
+		{A75A6F8C-6FE0-4B93-A792-0E7F47C37D95}.Release|x64.Build.0 = Release|x64
+		{060E615B-8E48-4CA3-A290-C6670012026E}.Debug|x64.ActiveCfg = Debug|x64
+		{060E615B-8E48-4CA3-A290-C6670012026E}.Debug|x64.Build.0 = Debug|x64
+		{060E615B-8E48-4CA3-A290-C6670012026E}.Release|x64.ActiveCfg = Release|x64
+		{060E615B-8E48-4CA3-A290-C6670012026E}.Release|x64.Build.0 = Release|x64
+		{B21647D1-7331-44F6-B391-C576365C2843}.Debug|x64.ActiveCfg = Debug|x64
+		{B21647D1-7331-44F6-B391-C576365C2843}.Debug|x64.Build.0 = Debug|x64
+		{B21647D1-7331-44F6-B391-C576365C2843}.Release|x64.ActiveCfg = Release|x64
+		{B21647D1-7331-44F6-B391-C576365C2843}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

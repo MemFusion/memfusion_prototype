@@ -1,0 +1,70 @@
+{
+  "_cls": "p",
+  "venue_uuid": BinData(3, "bla"),
+  "_venue_uuid": "UUID",
+  "venue_id": 1,
+  "object_uuid": BinData(3, "bla"),
+  "_object_uuid": "UUID",
+  "entry_type": "type_1",
+  "metadata": {
+    "uuid": "UUID",
+    "schema_version": "0.5",
+    "message": "bla bla",
+    "created": {
+      "ms_utc": 1399562267192.0991211,
+      "iso_local": new Date(1399569467192),
+      "tz_name": "Europe/Berlin",
+      "iso_utc": new Date(1399562267192),
+      "ms_local": 1399569467192.0991211
+    },
+    "device": {
+      "identifier": "UUID",
+      "name": "iPod touch"
+    },
+    "user": {
+      "uuid": "UUID",
+      "name": "K"
+    },
+    "created_at": new Date(1399562267192)
+  },
+  "synced_at": 1399562444.7612071037,
+  "_synced_at": "2014-05-08 17:20:44.761207",
+  "shift_uuid": BinData(3, "bla"),
+  "session_uuid": BinData(3, "bla"),
+  "uuid": "UUID",
+  "item": {
+    "uuid": "UUID",
+    "name": "name",
+    "plu": "153",
+    "price": {
+      "amount": 290,
+      "currency": "EUR",
+      "exp": -2
+    },
+    "is_expense": false,
+    "cat": {
+      "uuid": "UUID",
+      "name": "name",
+      "supercategory": "name"
+    }
+  },
+  "booked_price": {
+    "amount": 290,
+    "currency": "EUR",
+    "exp": -2
+  },
+  "quantity": 1,
+  "order_number": 0,
+  "table": {
+    "uuid": "UUID",
+    "name": "26"
+  },
+  "tab": {
+    "uuid": BinData(3, "bla"),
+    "name": "26"
+  },
+  "party": {
+    "uuid": "UUID",
+    "number": 0
+  }
+}
