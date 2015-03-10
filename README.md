@@ -1,4 +1,4 @@
-![](https://github.com/MemFusion/memfusion_prototype.git/docs/MF_logo_Memfusion.png)
+![](https://github.com/MemFusion/memfusion_prototype/blob/master/docs/MF_logo_Memfusion.png)
 
 #MemFusion
 ##An in-memory aggregation engine in the MongoDB ecosystem
