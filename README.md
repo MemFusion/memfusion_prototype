@@ -22,12 +22,12 @@ The work is still not done yet, but I have a prototype I would like to share and
 
 ##Limitations
 - Runs only on Windows for now. Porting to Linux is my #1 priority.<br>
-- Although the BackEnd is fully multithreaded. The FrontEnd, for now, is single threaded: it serializes each request.<br>
+- Although the BackEnd is fully multithreaded. The FrontEnd is, for now, single threaded: it serializes each request.<br>
 - There is no decent logging.<br>
 - No configuration. You are stuck with port 27017 for example. And with default Collection parameters. (Program.fs)<br>
 - The query parser is not complete. Not all MongoDB operators are not supported yet.<br>
 - Complex aggregations are not supported yet. Pipelines not there yet.<br>
-- You cannot have more than 3GB of Binary Data for now.<br>
+- You cannot have more than 3GB of Binary Data for now (CLR limitations, Binary Data are, in fact, handled in the FrontEnd).<br>
 - Wire protocol compatible to MongoDB 2.6.<br>
 - Builds only with Visual Studio 2013.<br>
 
@@ -89,7 +89,7 @@ Simple searches with one or two filtes run at 50% of memory bandwidth (5GB/s on 
 Not in my priority order. Please indicate your most favorite features.
 
 1-  Port to linux.<br>
-2-  Sharding.<br>
+2-  Distribute across multiple boxes with auto sharding.<br>
 3-  Add configurability.<br>
 4-  Add decent logging.<br>
 5-  Improve support for MongoDB commands.<br>
